@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h1>سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر، ولا حول ولا قوة إلا بالله</h1>
+        <button id="btn">100</button>
+        <h1>لا إلهَ إلاَّ اللَّه وحْدهُ لاَ شَرِيكَ لهُ، لَهُ المُلْكُ، ولَهُ الحمْدُ، وَهُو عَلَى كُلِّ شَيءٍ قَدِيرٌ
+        </h1>
+        <button id="btn2">100</button>
+        <h1 lang="ar">أستغفر الله العظيم الذي لا إله إلا هو الحي القيوم وأتوب إليه</h1>
+        <button id="btn3">100</button>
+        <br>
+        <button onclick=asd()>Re-Set</button>
+    </div>
+
+    <script>
+
+
+        let btn1 = document.getElementById("btn")
+        btn1.addEventListener('click', (eo) => {
+            let num = Number(eo.target.innerHTML)
+            num--
+            localStorage.setItem("inLocal1", num)
+            eo.target.innerHTML = num
+        })
+        if (localStorage.getItem("inLocal1") == null) {
+            btn1.innerHTML = 100
+        } else {
+            btn1.innerHTML = localStorage.getItem("inLocal1")
+        }
+
+
+        let btn2 = document.getElementById("btn2")
+        btn2.addEventListener('click', (eo) => {
+            let num = Number(eo.target.innerHTML)
+            num--
+            localStorage.setItem("inLocal2", num)
+            eo.target.innerHTML = num
+        })
+        if (localStorage.getItem("inLocal2") == null) {
+            btn2.innerHTML = 100
+        } else {
+            btn2.innerHTML = localStorage.getItem("inLocal2")
+        }
+
+
+        let btn3 = document.getElementById("btn3")
+        btn3.addEventListener('click', (eo) => {
+            let num = Number(eo.target.innerHTML)
+            num--
+            localStorage.setItem("inLocal3", num)
+            eo.target.innerHTML = num
+        })
+        if (localStorage.getItem("inLocal3") == null) {
+            btn3.innerHTML = 100
+        } else {
+            btn3.innerHTML = localStorage.getItem("inLocal3")
+        }
+
+
+
+
+
+        function asd() {
+            localStorage.clear();
+            btn1.innerHTML = 100
+            btn2.innerHTML = 100
+            btn3.innerHTML = 100
+        }
+
+    </script>
+</body>
+
+</html>
