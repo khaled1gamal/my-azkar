@@ -31,6 +31,8 @@
         <button id="btn2">0</button>
         <h1 lang="ar">أستغفر الله العظيم الذي لا إله إلا هو الحي القيوم وأتوب إليه</h1>
         <button id="btn3">0</button>
+        <h1 lang="ar"> سبحان الله وبحمده </h1>
+        <button id="btn4">0</button>
         <br>
         <button onclick=asd()>Re-Set</button>
     </div>
@@ -79,6 +81,19 @@
             btn3.innerHTML = localStorage.getItem("inLocal3")
         }
 
+         let btn4 = document.getElementById("btn4")
+        btn4.addEventListener('click', (eo) => {
+            let num = Number(eo.target.innerHTML)
+            num++
+            localStorage.setItem("inLocal4", num)
+            eo.target.innerHTML = num
+        })
+        if (localStorage.getItem("inLocal4") == null) {
+            btn4.innerHTML = 0
+        } else {
+            btn4.innerHTML = localStorage.getItem("inLocal4")
+        }
+
 
 
 
@@ -88,6 +103,7 @@
             btn1.innerHTML = 0
             btn2.innerHTML = 0
             btn3.innerHTML = 0
+            btn4.innerHTML = 0
         }
 
     </script>
