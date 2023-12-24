@@ -121,6 +121,15 @@
             btn4.innerHTML = 0
             btn5.innerHTML = 0
         }
+        Notification.requestPermission().then(perm => {
+            if (perm === "granted") {
+                new Notification("", {
+                    body: "صلي علي محمد",
+                    icon: "asd",
+                    vibrate: 3000, 
+                })
+            }
+        })
 
     </script>
 </body>
