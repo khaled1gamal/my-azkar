@@ -121,7 +121,8 @@
             btn4.innerHTML = 0
             btn5.innerHTML = 0
         }
-        Notification.requestPermission().then(perm => {
+        setInterval(() => {
+            Notification.requestPermission().then(perm => {
             if (perm === "granted") {
                 new Notification("", {
                     body: "صلي علي محمد",
@@ -130,6 +131,7 @@
                 })
             }
         })
+        }, 10000);
 
     </script>
 </body>
